@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Doctor } from 'src/app/shared/security/doctor';
+import { Pat } from 'src/app/shared/security/patient';
+import { Patient } from '../allpatients/patient.model';
+
 
 @Component({
   selector: 'app-add-patient',
@@ -8,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddPatientComponent {
   patientForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private http:HttpClient,private fb: FormBuilder) {
     this.patientForm = this.fb.group({
       first: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
       last: [''],
@@ -30,6 +35,15 @@ export class AddPatientComponent {
     });
   }
   onSubmit() {
+    const {first,last,gender,dob} = this.patientForm.value;
+
+      const dat: Pat = new Pat();
+             dat.first = first;
+             dat.dob = dob;
+    
     console.log('Form Value', this.patientForm.value);
+    this.http.post('http://localhost:8009/Patient/',this.patientForm.value).subscribe(data => {
+      console.log(data);
+    })
   }
 }
