@@ -51,7 +51,9 @@ export class FormDialogComponent {
     return this.fb.group({
       id: [this.patient.id],
       img: [this.patient.img],
-      name: [this.patient.name],
+      first: [this.patient.first],
+      dob: [this.patient.dob],
+      email: [this.patient.email],
       gender: [this.patient.gender],
       date: [this.patient.date],
       bGroup: [this.patient.bGroup],

@@ -84,7 +84,7 @@
                 <!-- ID Column -->
                 <ng-container matColumnDef="id">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
-                  <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+                  <mat-cell *matCellDef="let row">{{row.patient_ID}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="img">
                   <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Image
@@ -93,9 +93,9 @@
                       [src]="row.img" />
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="name">
+                <ng-container matColumnDef="first">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
+                  <mat-cell *matCellDef="let row"> {{row.first}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="gender">
                   <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-8'">Gender
@@ -113,24 +113,21 @@
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.mobile}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="date">
+                <ng-container matColumnDef="dob">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Birth Date</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.date | date: 'MM/dd/yyyy'}}</mat-cell>
+                  <mat-cell *matCellDef="let row"> {{row.dob | date: 'MM/dd/yyyy'}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="bGroup">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Blood Group</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.bGroup}}</mat-cell>
+                <ng-container matColumnDef="email">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.email}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="treatment">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Treatment</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.treatment}}</mat-cell>
-                </ng-container>
+                
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
                   <mat-header-cell *matHeaderCellDef class="pr-0">Actions</mat-header-cell>
                   <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
                     <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="$event.stopPropagation()"
-                      (click)="editCall(row)">
+                      (click)="updatepatient(row.patient_ID)">
                       <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="$event.stopPropagation()"

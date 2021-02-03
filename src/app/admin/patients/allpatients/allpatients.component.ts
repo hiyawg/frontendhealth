@@ -12,6 +12,7 @@ import { DeleteComponent } from './dialog/delete/delete.component';
 import { BehaviorSubject, fromEvent, merge, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-allpatients',
@@ -21,14 +22,14 @@ import { SelectionModel } from '@angular/cdk/collections';
 export class AllpatientsComponent implements OnInit {
   displayedColumns = [
     'select',
+    'id',
     'img',
-    'name',
+    'first',
+    'email',
     'gender',
     'address',
     'mobile',
-    'date',
-    'bGroup',
-    'treatment',
+    'dob',
     'actions',
   ];
   exampleDatabase: PatientService | null;
@@ -41,7 +42,8 @@ export class AllpatientsComponent implements OnInit {
     public httpClient: HttpClient,
     public dialog: MatDialog,
     public patientService: PatientService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router:Router
   ) {}
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -78,6 +80,7 @@ export class AllpatientsComponent implements OnInit {
   }
   editCall(row) {
     this.id = row.id;
+    console.log(this.id);
     const dialogRef = this.dialog.open(FormDialogComponent, {
       data: {
         patient: row,
@@ -104,6 +107,17 @@ export class AllpatientsComponent implements OnInit {
         );
       }
     });
+  }
+  updatepatient(rowid: any) {
+  
+  console.log(rowid);
+    this.router.navigate(['/admin/patients/edit-patient',rowid]).then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
+     });
   }
   deleteItem(i: number, row) {
     this.index = i;
@@ -171,6 +185,7 @@ export class AllpatientsComponent implements OnInit {
       this.paginator,
       this.sort
     );
+    
     fromEvent(this.filter.nativeElement, 'keyup')
       // .debounceTime(150)
       // .distinctUntilChanged()
@@ -227,6 +242,7 @@ export class ExampleDataSource extends DataSource<Patient> {
           .filter((patient: Patient) => {
             const searchStr = (
               patient.name +
+              patient.first +
               patient.gender +
               patient.address +
               patient.date +
@@ -275,6 +291,9 @@ export class ExampleDataSource extends DataSource<Patient> {
           break;
         case 'mobile':
           [propertyA, propertyB] = [a.mobile, b.mobile];
+          break;
+          case 'first':
+          [propertyA, propertyB] = [a.first, b.first];
           break;
       }
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
