@@ -98,22 +98,7 @@
                     </mat-error>
                   </mat-form-field>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                  <mat-form-field class="example-full-width mb-3">
-                    <mat-label>Marital Status</mat-label>
-                    <mat-select formControlName="maritalStatus" required>
-                      <mat-option [value]="'1'">
-                        Single
-                      </mat-option>
-                      <mat-option [value]="'2'">
-                        Married
-                      </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="patientForm.get('maritalStatus').hasError('required')">
-                      Select Any
-                    </mat-error>
-                  </mat-form-field>
-                </div>
+               
               </div>
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
