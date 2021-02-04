@@ -27,7 +27,6 @@ export class AllpatientsComponent implements OnInit {
     'first',
     'email',
     'gender',
-    'address',
     'mobile',
     'dob',
     'actions',

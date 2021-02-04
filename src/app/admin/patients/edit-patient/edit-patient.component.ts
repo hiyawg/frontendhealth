@@ -26,6 +26,12 @@ export class EditPatientComponent {
   }
   onSubmit() {
     console.log('Form Value', this.patientForm.value);
+    console.log(this.id);
+    const rooturl = 'http://localhost:8009/Patient';      
+    this.http.put(rooturl + '/' + this.id,this.patientForm.value).subscribe(data => {        
+           
+      console.log(data);                    
+       });
   }
   createContactForm(id:any) : any {
     console.log(id)
@@ -34,7 +40,7 @@ export class EditPatientComponent {
      this.http.get(rooturl + '/' + id).subscribe(data => {        
       this.formdata = data; 
      this.patientForm = this.fb.group({
-      first:  [ this.formdata.first,[Validators.required]],
+      first:  [ this.formdata.first],
       last: [this.formdata.last],
       gender: [this.formdata.gender, [Validators.required]],
       mobile: [this.formdata.mobile, [Validators.required]],

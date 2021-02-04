@@ -103,12 +103,7 @@
                   <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-8'"> {{row.gender}}
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="address">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-15'">Address
-                  </mat-header-cell>
-                  <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-20'"> {{row.address}}
-                  </mat-cell>
-                </ng-container>
+                
                 <ng-container matColumnDef="mobile">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.mobile}}</mat-cell>
