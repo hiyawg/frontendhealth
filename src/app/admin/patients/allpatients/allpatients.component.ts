@@ -118,28 +118,20 @@ export class AllpatientsComponent implements OnInit {
       }
      });
   }
-  deleteItem(i: number, row) {
-    this.index = i;
-    this.id = row.id;
-    const dialogRef = this.dialog.open(DeleteComponent, {
-      data: row,
-    });
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === 1) {
-        const foundIndex = this.exampleDatabase.dataChange.value.findIndex(
-          (x) => x.id === this.id
-        );
-        // for delete we use splice in order to remove single object from DataService
-        this.exampleDatabase.dataChange.value.splice(foundIndex, 1);
-        this.refreshTable();
-        this.showNotification(
-          'snackbar-danger',
-          'Delete Record Successfully...!!!',
-          'bottom',
-          'center'
-        );
-      }
-    });
+  deleteItem(rowid: any) {
+    const rooturl = 'http://localhost:8009/Patient';      
+     this.httpClient.delete(rooturl + '/' + rowid).subscribe(data =>{
+      this.loadData();
+      this.showNotification(
+        'snackbar-danger',
+        'Delete Record Successfully...!!!',
+        'bottom',
+        'center')
+     })
+    
+   
+       
+       
   }
   private refreshTable() {
     this.paginator._changePageSize(this.paginator.pageSize);
