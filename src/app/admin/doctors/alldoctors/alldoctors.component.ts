@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 import { FormDialogComponent } from './dialogs/form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './dialogs/delete/delete.component';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-alldoctors',
   templateUrl: './alldoctors.component.html',
@@ -20,11 +21,12 @@ import { SelectionModel } from '@angular/cdk/collections';
 export class AlldoctorsComponent implements OnInit {
   displayedColumns = [
     'select',
+    'id',
     'img',
-    'name',
+    'first',
     'department',
-    'specialization',
-    'degree',
+    'designation',
+    'education',
     'mobile',
     'email',
     'date',
@@ -38,6 +40,7 @@ export class AlldoctorsComponent implements OnInit {
   doctors: Doctors | null;
   constructor(
     public httpClient: HttpClient,
+    private router: Router,
     public dialog: MatDialog,
     public doctorsService: DoctorsService,
     private snackBar: MatSnackBar
@@ -127,6 +130,17 @@ export class AlldoctorsComponent implements OnInit {
       }
     });
   }
+  updatedoctor(rowid: any) {
+  
+    console.log(rowid);
+      this.router.navigate(['/admin/doctors/edit-doctor',rowid]).then(e => {
+        if (e) {
+          console.log("Navigation is successful!");
+        } else {
+          console.log("Navigation has failed!");
+        }
+       });
+    }
   private refreshTable() {
     this.paginator._changePageSize(this.paginator.pageSize);
   }

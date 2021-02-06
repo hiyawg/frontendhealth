@@ -27,7 +27,7 @@
 
           </div>
           <div class="body">
-            <form class="m-4" [formGroup]="docForm" (ngSubmit)="onSubmit()">
+            <form *ngIf="formdata" class="m-4" [formGroup]="docForm" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">

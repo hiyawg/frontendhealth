@@ -93,21 +93,21 @@
                       [src]="row.img" />
                   </mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
+                <ng-container matColumnDef="first">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.first}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="department">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.department}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="specialization">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Specialization</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.specialization}}</mat-cell>
+                <ng-container matColumnDef="designation">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Designation</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.designation}}</mat-cell>
                 </ng-container>
-                <ng-container matColumnDef="degree">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Degree</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.degree}}</mat-cell>
+                <ng-container matColumnDef="education">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Education</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.education}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="mobile">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
@@ -126,7 +126,7 @@
                   <mat-header-cell class="pr-0" *matHeaderCellDef>Actions</mat-header-cell>
                   <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
                     <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="$event.stopPropagation()"
-                      (click)="editCall(row)">
+                      (click)="updatedoctor(row.id)">
                       <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="$event.stopPropagation()"
