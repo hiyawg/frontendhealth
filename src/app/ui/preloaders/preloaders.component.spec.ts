@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { PreloadersComponent } from './preloaders.component';
 describe('PreloadersComponent', () => {
   let component: PreloadersComponent;
   let fixture: ComponentFixture<PreloadersComponent>;
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [PreloadersComponent]
     }).compileComponents();

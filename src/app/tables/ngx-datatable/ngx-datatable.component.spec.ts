@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgxDatatableComponent } from './ngx-datatable.component';
 describe('NgxDatatableComponent', () => {
   let component: NgxDatatableComponent;
   let fixture: ComponentFixture<NgxDatatableComponent>;
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [NgxDatatableComponent]
     }).compileComponents();

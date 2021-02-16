@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { DataWidgetComponent } from './data-widget.component';
 describe('DataWidgetComponent', () => {
   let component: DataWidgetComponent;
   let fixture: ComponentFixture<DataWidgetComponent>;
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [DataWidgetComponent]
     }).compileComponents();
