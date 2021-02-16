@@ -67,7 +67,7 @@ export class SigninComponent implements OnInit {
             this.router.navigate(['/admin/dashboard/main']);
             //this.router.navigate(['/admin/patients/edit-patient']);
 
-          } else if (role === "ROLE_USER") {
+          } else if (role === "ROLE_DOCTOR") {
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Doctor")
             this.router.navigate(['/doctor/dashboard']);
