@@ -29,14 +29,14 @@ export class EditDoctorComponent {
   
       const doctorData: Doctor = {first:first,last:last,username:username,gender:gender,dob:dob,department:department,mobile:mobile,designation:designation,
         address:address,education:education,email:email,password:password,role: [role]};
-      const rooturl = 'http://localhost:8009/Update';      
+      const rooturl = 'https://debrebirhanhospital.herokuapp.com/Update';      
       this.http.put(rooturl + '/' + this.id,doctorData).subscribe(data => {        
              
         console.log(data);                    
          });
     }
   createContactForm(id:any): any {
-    const rooturl = 'http://localhost:8009/User';      
+    const rooturl = 'https://debrebirhanhospital.herokuapp.com/User';      
      this.http.get(rooturl + '/' + id).subscribe(data => {
        console.log(data);
        this.formdata = data;

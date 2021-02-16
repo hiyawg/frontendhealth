@@ -119,7 +119,7 @@ export class AllpatientsComponent implements OnInit {
      });
   }
   deleteItem(rowid: any) {
-    const rooturl = 'http://localhost:8009/Patient';      
+    const rooturl = 'https://debrebirhanhospital.herokuapp.com/api/auth/Patient';      
      this.httpClient.delete(rooturl + '/' + rowid).subscribe(data =>{
       this.loadData();
       this.showNotification(

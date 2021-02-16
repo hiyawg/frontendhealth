@@ -16,13 +16,14 @@ const httpOptions = {
 export class AuthService {
   isLogin = false;
   roleAs: string
-  private loginUrl = 'http://localhost:8009/api/auth/signin';
-  private signupUrl = 'http://localhost:8009/api/auth/signup';
+  private loginUrl = 'https://debrebirhanhospital.herokuapp.com/api/auth/signin';
+  private signupUrl = 'https://debrebirhanhospital.herokuapp.com/api/auth/signup';
  
   constructor(private http: HttpClient) {
   }
  
   attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
+    console.log(this.loginUrl)
     return this.http.post<JwtResponse>(this.loginUrl, credentials, httpOptions);
   }
  
