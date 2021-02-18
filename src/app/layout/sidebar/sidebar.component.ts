@@ -94,7 +94,9 @@ export class SidebarComponent implements OnInit {
         this.userType = Role.Patient;
       } else if (userRole === Role.Doctor) {
         this.userType = Role.Doctor;
-      } else {
+      } else if (userRole === Role.Receptionist) {
+        this.userType = Role.Receptionist;
+      }else {
         this.userType = Role.Admin;
       }
     }

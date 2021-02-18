@@ -41,6 +41,15 @@ const routes: Routes = [
           import("./patient/patient.module").then((m) => m.PatientModule),
       },
       {
+        path: "receptionist",
+        canActivate: [AuthGuard],
+        data: {
+          role: Role.Receptionist,
+        },
+        loadChildren: () =>
+          import("./receptionist/receptionist.module").then((m) => m.ReceptionistModule),
+      },
+      {
         path: "calendar",
         loadChildren: () =>
           import("./calendar/calendar.module").then((m) => m.CalendarsModule),

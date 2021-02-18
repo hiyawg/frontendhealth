@@ -64,6 +64,8 @@ export class SigninComponent implements OnInit {
 
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Admin")
+            localStorage.setItem('USERIMG', "assets/images/user/admin.jpg")
+            
             this.router.navigate(['/admin/dashboard/main']);
             //this.router.navigate(['/admin/patients/edit-patient']);
 
