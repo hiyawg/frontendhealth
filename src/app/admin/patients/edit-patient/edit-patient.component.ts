@@ -27,7 +27,7 @@ export class EditPatientComponent {
   onSubmit() {
     console.log('Form Value', this.patientForm.value);
     console.log(this.id);
-    const rooturl = 'https://debrebirhanhospital.herokuapp.com/api/auth/Patient';      
+    const rooturl = 'https://debrebirhanhospital.herokuapp.com/Patient';      
     this.http.put(rooturl + '/' + this.id,this.patientForm.value).subscribe(data => {        
            
       console.log(data);                    
@@ -36,7 +36,7 @@ export class EditPatientComponent {
   createContactForm(id:any) : any {
     console.log(id)
     console.log('this is the id');
-    const rooturl = 'https://debrebirhanhospital.herokuapp.com/api/auth/Patient';      
+    const rooturl = 'https://debrebirhanhospital.herokuapp.com/Patient';      
      this.http.get(rooturl + '/' + id).subscribe(data => {        
       this.formdata = data; 
      this.patientForm = this.fb.group({
