@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkinpatient.component.sass']
 })
 export class CheckinpatientComponent implements OnInit {
-
-  constructor() { }
+  message : any
+  constructor() { 
+   
+  }
 
   ngOnInit(): void {
+    this.getme();
+    
+  }
+  getme() {
+    this.message = 'hi I am here';
   }
 
 }

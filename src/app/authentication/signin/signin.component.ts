@@ -71,9 +71,10 @@ export class SigninComponent implements OnInit {
 
           } else if (role === "ROLE_DOCTOR") {
             localStorage.setItem('STATE', 'true');
-            localStorage.setItem('ROLE', "Doctor")
+            localStorage.setItem('ROLE', "Receptionist")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
-            this.router.navigate(['/doctor/dashboard']);
+            
+            this.router.navigate(['/receptionist/checkin']);
           }
           
           

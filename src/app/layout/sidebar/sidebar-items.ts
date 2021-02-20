@@ -367,7 +367,34 @@ export const ROUTES: RouteInfo[] = [
       },
     ],
   },
+  //Reception Modules
+  {
+    path: '',
+    title: 'Receptionist',
+    moduleName: 'receptionist',
+    iconType: 'material-icons-two-tone',
+    icon: 'home',
+    class: '',
+    groupTitle: false,
+    badge: '',
+    badgeClass: '',
+    role: ['Receptionist'],
+    submenu: [{
+      path: 'receptionist/checkin',
+    title: 'Check In',
+    moduleName: 'receptionist',
+    iconType: 'material-icons-two-tone',
+    icon: 'home',
+    class: '',
+    groupTitle: false,
+    badge: '',
+    badgeClass: '',
+    role: [''],
+    submenu:[]
+    }],
 
+    
+  },
   // Doctor Modules
   {
     path: '/doctor/dashboard',
