@@ -32,8 +32,8 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3">
                     <mat-label>First name</mat-label>
-                    <input matInput formControlName="first" required>
-                    <mat-error *ngIf="bookingForm.get('first').hasError('required')">
+                    <input matInput formControlName="firstname" required>
+                    <mat-error *ngIf="bookingForm.get('firstname').hasError('required')">
                       First name is required
                     </mat-error>
                   </mat-form-field>
@@ -41,7 +41,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3">
                     <mat-label>Last name</mat-label>
-                    <input matInput formControlName="last">
+                    <input matInput formControlName="lastname">
                   </mat-form-field>
                 </div>
               </div>
@@ -101,31 +101,7 @@
               </div>
               <h2 class="card-inside-title">Appointment Details</h2>
               <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
-                  <mat-form-field class="example-full-width mb-3">
-                    <mat-label>Consulting Doctor</mat-label>
-                    <mat-select formControlName="doctor" required>
-                      <mat-option [value]="'Dr.Rajesh'">
-                        Dr.Rajesh
-                      </mat-option>
-                      <mat-option [value]="'Dr.Sarah Smith'">
-                        Dr.Sarah Smith
-                      </mat-option>
-                      <mat-option [value]="'Dr.Jay Soni'">
-                        Dr.Jay Soni
-                      </mat-option>
-                      <mat-option [value]="'Dr.Pooja Patel'">
-                        Dr.Pooja Patel
-                      </mat-option>
-                      <mat-option [value]="'other'">
-                        Other
-                      </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="bookingForm.get('doctor').hasError('required')">
-                      Select Any Doctor
-                    </mat-error>
-                  </mat-form-field>
-                </div>
+                
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3">
                     <mat-label>Date Of Appointment</mat-label>
@@ -162,6 +138,23 @@
                     <textarea matInput formControlName="note"></textarea>
                   </mat-form-field>
                 </div>
+               
+                  
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field class="example-full-width mb-3" appearance="outline">
+                    <mat-label>Doctor</mat-label>
+                    <mat-select formControlName="doctorsname" [(ngModel)]="doctorname" required>
+                      <mat-option *ngFor="let doc of doctor" [value]="[doc.first]  + [' '] +  [doc.last]">
+                        {{doc.first}} {{doc.last}}
+                      </mat-option>
+                      
+                    </mat-select>
+                    
+                  </mat-form-field>
+                  
+                </div>
+                  
+               
               </div>
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">

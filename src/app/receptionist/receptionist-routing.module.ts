@@ -1,21 +1,22 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CheckinpatientComponent } from "./checkinpatient/checkinpatient.component";
+import { InquiryComponent } from "./inquiry/inquiry.component";
 import { RegisterpatientComponent } from "./registerpatient/registerpatient.component";
 import { SearchpatientComponent } from "./searchpatient/searchpatient.component";
 
 const routes: Routes = [
     {
       path: 'checkin',
-      component: CheckinpatientComponent
+      component: CheckinpatientComponent,
     },
     {
-      path: 'register',
-      component: RegisterpatientComponent
+      path: 'inquiry',
+      component: InquiryComponent,
     },
     {
       path: 'search',
-      component: SearchpatientComponent
+      component: SearchpatientComponent,
     }
   ];
   @NgModule({

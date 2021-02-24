@@ -65,7 +65,7 @@ export class SigninComponent implements OnInit {
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Admin")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
-            
+            //this.router.navigate(['/receptionist/inquiry']);
             this.router.navigate(['/admin/dashboard/main']);
             //this.router.navigate(['/admin/patients/edit-patient']);
 
@@ -74,10 +74,15 @@ export class SigninComponent implements OnInit {
             localStorage.setItem('ROLE', "Receptionist")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
             
-            this.router.navigate(['/receptionist/checkin']);
+            this.router.navigate(['/receptionist/inquiry']);
+          } else if (role === "ROLE_RECEPTIONIST") {
+            localStorage.setItem('STATE', 'true');
+            localStorage.setItem('ROLE', "Receptionist")
+            localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
+            
+            this.router.navigate(['/receptionists/assign']);
+          
           }
-          
-          
         },
         error => {
           console.log(error);

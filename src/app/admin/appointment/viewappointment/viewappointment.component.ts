@@ -23,7 +23,7 @@ import { SelectionModel } from "@angular/cdk/collections";
 export class ViewappointmentComponent implements OnInit {
   displayedColumns = [
     "select",
-    "img",
+    
     "name",
     "email",
     "gender",

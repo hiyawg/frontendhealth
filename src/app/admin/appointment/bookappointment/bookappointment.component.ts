@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { Component,OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-bookappointment",
   templateUrl: "./bookappointment.component.html",
@@ -9,10 +11,12 @@ export class BookappointmentComponent {
   bookingForm: FormGroup;
   hide3 = true;
   agree3 = false;
-  constructor(private fb: FormBuilder) {
+  doctor:any;
+  doctorname;
+  constructor(private router:Router,private fb: FormBuilder,private http:HttpClient) {
     this.bookingForm = this.fb.group({
-      first: ["", [Validators.required, Validators.pattern("[a-zA-Z]+")]],
-      last: [""],
+      firstname: ["", [Validators.required, Validators.pattern("[a-zA-Z]+")]],
+      lastname: [""],
       gender: ["", [Validators.required]],
       mobile: ["", [Validators.required]],
       address: [""],
@@ -21,7 +25,7 @@ export class BookappointmentComponent {
         [Validators.required, Validators.email, Validators.minLength(5)],
       ],
       dob: ["", [Validators.required]],
-      doctor: ["", [Validators.required]],
+      doctorsname: ["", [Validators.required]],
       doa: ["", [Validators.required]],
       toa: ["", [Validators.required]],
       injury: [""],
@@ -29,7 +33,25 @@ export class BookappointmentComponent {
       uploadImg: [""],
     });
   }
+  ngOnInit() {
+    this.getAllDoctors();
+  }
   onSubmit() {
     console.log("Form Value", this.bookingForm.value);
+    this.http.post('http://localhost:8009/appointement/',this.bookingForm.value).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['/admin/appointment/viewAppointment']);
+    })
+  }
+  getAllDoctors(){
+    this.http.get('http://localhost:8009/User/role',this.bookingForm.value).subscribe(data => {
+      console.log(data);
+      this.doctor = data;
+      //this.router.navigate(['/admin/appointment/viewAppointment']);
+      
+     
+       
+    })
+
   }
 }

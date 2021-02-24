@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Doctor } from 'src/app/shared/security/doctor';
 import { Pat } from 'src/app/shared/security/patient';
 import { Patient } from '../allpatients/patient.model';
@@ -13,7 +14,7 @@ import { Patient } from '../allpatients/patient.model';
 })
 export class AddPatientComponent {
   patientForm: FormGroup;
-  constructor(private http:HttpClient,private fb: FormBuilder) {
+  constructor(private http:HttpClient,private fb: FormBuilder,private router:Router) {
     this.patientForm = this.fb.group({
       first: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
       last: [''],
@@ -44,6 +45,7 @@ export class AddPatientComponent {
     console.log('Form Value', this.patientForm.value);
     this.http.post('https://debrebirhanhospital.herokuapp.com/Patient/',this.patientForm.value).subscribe(data => {
       console.log(data);
+      this.router.navigate(['/admin/patients/all-patients']);
     })
   }
 }

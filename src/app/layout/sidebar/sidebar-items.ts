@@ -173,7 +173,7 @@ export const ROUTES: RouteInfo[] = [
         role: [''],
         submenu: [],
       },
-      
+     
       
     ],
   },
@@ -367,34 +367,7 @@ export const ROUTES: RouteInfo[] = [
       },
     ],
   },
-  //Reception Modules
-  {
-    path: '',
-    title: 'Receptionist',
-    moduleName: 'receptionist',
-    iconType: 'material-icons-two-tone',
-    icon: 'home',
-    class: '',
-    groupTitle: false,
-    badge: '',
-    badgeClass: '',
-    role: ['Receptionist'],
-    submenu: [{
-      path: 'receptionist/checkin',
-    title: 'Check In',
-    moduleName: 'receptionist',
-    iconType: 'material-icons-two-tone',
-    icon: 'home',
-    class: '',
-    groupTitle: false,
-    badge: '',
-    badgeClass: '',
-    role: [''],
-    submenu:[]
-    }],
 
-    
-  },
   // Doctor Modules
   {
     path: '/doctor/dashboard',
@@ -609,9 +582,61 @@ export const ROUTES: RouteInfo[] = [
 
   // Common Modules
 
+    //Reception Modules
+    {
+      path: '',
+      title: 'Receptionist',
+      moduleName: 'receptionists',
+      iconType: 'material-icons-two-tone',
+      icon: 'assignment',
+      class: '',
+      groupTitle: false,
+      badge: '',
+      badgeClass: '',
+      role: ['Receptionist'],
+      submenu: [
+        {
+            path: '/receptionists/assign',
+            title: 'Assign',
+            moduleName: 'receptionists',
+            iconType: 'material-icons-two-tone',
+            icon: 'assignment',
+            class: '',
+            groupTitle: false,
+            badge: '',
+            badgeClass: '',
+            role: ['Receptionist'],
+            submenu:[]
+      }],
   
-  
-  
+      
+    },
+    {
+      path: "task",
+      title: "Task",
+      moduleName: "task",
+      iconType: "material-icons-two-tone",
+      icon: "fact_check",
+      class: "",
+      groupTitle: false,
+      badge: "",
+      badgeClass: "",
+      role: ["Admin", "Doctor","Receptionist"],
+      submenu: [],
+    },
+    {
+      path: "contacts",
+      title: "Check IN",
+      moduleName: "contacts",
+      iconType: "material-icons-two-tone",
+      icon: "contacts",
+      class: "",
+      groupTitle: false,
+      badge: "",
+      badgeClass: "",
+      role: ["Receptionist"],
+      submenu: [],
+    },
   
  
 

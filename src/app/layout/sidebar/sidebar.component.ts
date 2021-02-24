@@ -30,6 +30,7 @@ export class SidebarComponent implements OnInit {
   userType: string;
   headerHeight = 60;
   currentRoute: string;
+ 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
@@ -60,6 +61,7 @@ export class SidebarComponent implements OnInit {
     }
   }
   callMenuToggle(event: any, element: any) {
+   
     if (element === this.showMenu) {
       this.showMenu = '0';
     } else {
@@ -81,6 +83,8 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
+     
+      
       const userRole = this.authService.getRole();
       this.userFullName = this.authService.getUserFullName();
       this.userImg = this.authService.getUserImg();

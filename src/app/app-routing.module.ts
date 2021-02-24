@@ -5,6 +5,7 @@ import { Role } from "./shared/security/role";
 import { Page404Component } from "./authentication/page404/page404.component";
 import { AuthLayoutComponent } from "./layout/app-layout/auth-layout/auth-layout.component";
 import { MainLayoutComponent } from "./layout/app-layout/main-layout/main-layout.component";
+import { AssignComponent } from "./receptionists/assign/assign.component";
 const routes: Routes = [
   {
     path: "",
@@ -48,6 +49,16 @@ const routes: Routes = [
         },
         loadChildren: () =>
           import("./receptionist/receptionist.module").then((m) => m.ReceptionistModule),
+      },
+      {
+        path: "receptionists",
+        component: AssignComponent,
+        canActivate: [AuthGuard],
+        data: {
+          role: Role.Receptionist,
+        },
+        loadChildren: () =>
+          import("./receptionists/receptionists.module").then((m) => m.ReceptionistsModule),
       },
       {
         path: "calendar",

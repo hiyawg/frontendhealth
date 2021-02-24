@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterpatientComponent } from './registerpatient/registerpatient.component';
 import { CheckinpatientComponent } from './checkinpatient/checkinpatient.component';
 import { SearchpatientComponent } from './searchpatient/searchpatient.component';
-import { ReceptionistRoutingModule } from './receptionis-routing.module';
+import { ReceptionistRoutingModule } from './receptionist-routing.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { ChartsModule as chartjsModule } from 'ng2-charts';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -25,10 +25,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { InquiryComponent } from './inquiry/inquiry.component';
 
 
 @NgModule({
-  declarations: [RegisterpatientComponent, CheckinpatientComponent, SearchpatientComponent],
+  declarations: [RegisterpatientComponent, CheckinpatientComponent, SearchpatientComponent, InquiryComponent],
   imports: [
     CommonModule,
     ReceptionistRoutingModule,

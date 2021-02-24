@@ -4,10 +4,9 @@ import { Appointment } from "./appointment.model";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 @Injectable()
 export class AppointmentService {
-  private readonly API_URL = "assets/data/appointment.json";
-  dataChange: BehaviorSubject<Appointment[]> = new BehaviorSubject<
-    Appointment[]
-  >([]);
+
+  private readonly API_URL = 'http://localhost:8009/appointement';
+  dataChange: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   // Temporarily stores data from dialogs
   dialogData: any;
   constructor(private httpClient: HttpClient) {}
@@ -19,9 +18,10 @@ export class AppointmentService {
   }
   /** CRUD METHODS */
   getAllAppointments(): void {
-    this.httpClient.get<Appointment[]>(this.API_URL).subscribe(
+    this.httpClient.get<any>(this.API_URL).subscribe(
       (data) => {
         this.dataChange.next(data);
+        console.log(data)
       },
       (error: HttpErrorResponse) => {
         console.log(error.name + " " + error.message);
