@@ -12,7 +12,7 @@ const routes: Routes = [
     },
     {
       path: 'register',
-      component: InquiryComponent,
+      component: RegisterpatientComponent,
     },
     {
       path: 'search',
