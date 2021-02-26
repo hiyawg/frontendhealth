@@ -582,35 +582,7 @@ export const ROUTES: RouteInfo[] = [
 
   // Common Modules
 
-    //Reception Modules
-    {
-      path: '',
-      title: 'Receptionist',
-      moduleName: 'receptionists',
-      iconType: 'material-icons-two-tone',
-      icon: 'assignment',
-      class: '',
-      groupTitle: false,
-      badge: '',
-      badgeClass: '',
-      role: ['Receptionist'],
-      submenu: [
-        {
-            path: '/receptionists/assign',
-            title: 'Assign',
-            moduleName: 'receptionists',
-            iconType: 'material-icons-two-tone',
-            icon: 'assignment',
-            class: '',
-            groupTitle: false,
-            badge: '',
-            badgeClass: '',
-            role: ['Receptionist'],
-            submenu:[]
-      }],
-  
-      
-    },
+    
     {
       path: "task",
       title: "Task",
@@ -621,7 +593,7 @@ export const ROUTES: RouteInfo[] = [
       groupTitle: false,
       badge: "",
       badgeClass: "",
-      role: ["Admin", "Doctor","Receptionist"],
+      role: ["Admin", "Doctor"],
       submenu: [],
     },
     {
@@ -634,7 +606,7 @@ export const ROUTES: RouteInfo[] = [
       groupTitle: false,
       badge: "",
       badgeClass: "",
-      role: ["Receptionist"],
+      role: [""],
       submenu: [],
     },
   
