@@ -80,7 +80,7 @@ export class SigninComponent implements OnInit {
             localStorage.setItem('ROLE', "Receptionist")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
             
-            this.router.navigate(['/receptionists']);
+            this.router.navigate(['/receptionist']);
           
           }
         },
