@@ -65,22 +65,22 @@ export class SigninComponent implements OnInit {
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Admin")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
-            //this.router.navigate(['/receptionist/inquiry']);
+           
             this.router.navigate(['/admin/dashboard/main']);
-            //this.router.navigate(['/admin/patients/edit-patient']);
+           
 
           } else if (role === "ROLE_DOCTOR") {
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Receptionist")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
             
-            this.router.navigate(['/receptionist/inquiry']);
+            this.router.navigate(["/doctor/dashboard"]);
           } else if (role === "ROLE_RECEPTIONIST") {
             localStorage.setItem('STATE', 'true');
             localStorage.setItem('ROLE', "Receptionist")
             localStorage.setItem('USERIMG', "assets/images/user/doctor1.jpg")
             
-            this.router.navigate(['/receptionists/assign']);
+            this.router.navigate(['/receptionists']);
           
           }
         },

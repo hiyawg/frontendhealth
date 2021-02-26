@@ -11,7 +11,7 @@ const routes: Routes = [
       component: CheckinpatientComponent,
     },
     {
-      path: 'inquiry',
+      path: 'register',
       component: InquiryComponent,
     },
     {

@@ -638,7 +638,34 @@ export const ROUTES: RouteInfo[] = [
       submenu: [],
     },
   
- 
+    {
+      path: "",
+      title: "Receptionist",
+      moduleName: "receptionist",
+      iconType: "material-icons-two-tone",
+      icon: "assignment",
+      class: "menu-toggle",
+      groupTitle: false,
+      badge: "",
+      badgeClass: "",
+      role: ["Receptionist"],
+      submenu: [
+       
+        {
+          path: "/receptionist/register",
+          title: "Register",
+          moduleName: "receptionist",
+          iconType: "material-icons-two-tone",
+          icon: "menu-toggle",
+          class: "",
+          groupTitle: false,
+          badge: "",
+          badgeClass: "",
+          role: ["Receptionist"],
+          submenu: [],
+        },
+      ],
+    },
 
   
 
