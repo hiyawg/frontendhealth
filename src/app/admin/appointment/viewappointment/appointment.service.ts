@@ -22,6 +22,7 @@ export class AppointmentService {
       (data) => {
         this.dataChange.next(data);
         console.log(data)
+        console.log(data[14].firstname);
       },
       (error: HttpErrorResponse) => {
         console.log(error.name + " " + error.message);
