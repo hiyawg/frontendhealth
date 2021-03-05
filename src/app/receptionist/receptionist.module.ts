@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 import { RegisterpatientComponent } from './registerpatient/registerpatient.component';
 import { CheckinpatientComponent } from './checkinpatient/checkinpatient.component';
 import { SearchpatientComponent } from './searchpatient/searchpatient.component';
@@ -8,6 +10,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { ChartsModule as chartjsModule } from 'ng2-charts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { MatIconModule } from '@angular/material/icon';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgApexchartsModule } from 'ng-apexcharts';
@@ -28,6 +31,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { InquiryComponent } from './inquiry/inquiry.component';
 
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
 @NgModule({
   declarations: [RegisterpatientComponent, CheckinpatientComponent, SearchpatientComponent, InquiryComponent],
   imports: [
@@ -40,6 +46,10 @@ import { InquiryComponent } from './inquiry/inquiry.component';
     PerfectScrollbarModule,
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialFileInputModule,
     MatDialogModule,
     NgApexchartsModule,
     MatPaginatorModule,
