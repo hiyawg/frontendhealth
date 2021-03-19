@@ -32,6 +32,8 @@ import { InquiryComponent } from './inquiry/inquiry.component';
 
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PatientService } from './patients/allpatients/patient.service';
+
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     CommonModule,
     ReceptionistRoutingModule,
+  
     chartjsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
@@ -66,6 +69,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatTooltipModule,
     MatRadioModule,
     DragDropModule,
+  ],
+  providers: [
+    PatientService 
   ]
 })
 export class ReceptionistModule { }

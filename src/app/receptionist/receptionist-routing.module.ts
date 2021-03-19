@@ -15,6 +15,11 @@ const routes: Routes = [
       component: RegisterpatientComponent,
     },
     {
+      path: 'patient',
+      loadChildren: () =>
+        import('./patients/patients.module').then((m) => m.PatientsModule),
+    },
+    {
       path: 'search',
       component: SearchpatientComponent,
     }

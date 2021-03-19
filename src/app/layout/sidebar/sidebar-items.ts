@@ -229,7 +229,7 @@ export const ROUTES: RouteInfo[] = [
     groupTitle: false,
     badge: '',
     badgeClass: '',
-    role: ['Admin','Receptionist'],
+    role: ['Admin'],
     submenu: [
       {
         path: '/admin/patients/all-patients',
@@ -254,7 +254,7 @@ export const ROUTES: RouteInfo[] = [
         groupTitle: false,
         badge: '',
         badgeClass: '',
-        role: ['Receptionist'],
+        role: [''],
         submenu: [],
       },
       
@@ -650,6 +650,8 @@ export const ROUTES: RouteInfo[] = [
           role: ["Receptionist"],
           submenu: [],
         },
+        
+       
         {
           path: "/receptionist/search",
           title: "Search",
@@ -663,6 +665,48 @@ export const ROUTES: RouteInfo[] = [
           role: ["Receptionist"],
           submenu: [],
         },
+      ],
+    },
+    {
+      path: '',
+      title: 'Patients',
+      moduleName: 'patients',
+      iconType: 'material-icons-two-tone',
+      icon: 'face',
+      class: 'menu-toggle',
+      groupTitle: false,
+      badge: '',
+      badgeClass: '',
+      role: ['Receptionist'],
+      submenu: [
+        {
+          path: '/receptionist/patient/all-patients',
+          title: 'All Patients',
+          moduleName: 'patients',
+          iconType: '',
+          icon: '',
+          class: 'ml-menu',
+          groupTitle: false,
+          badge: '',
+          badgeClass: '',
+          role: ['Receptionist'],
+          submenu: [],
+        },
+        {
+          path: '/receptionist/patient/add-patient',
+          title: 'Add Patient',
+          moduleName: 'patients',
+          iconType: '',
+          icon: '',
+          class: 'ml-menu',
+          groupTitle: false,
+          badge: '',
+          badgeClass: '',
+          role: ['Receptionist'],
+          submenu: [],
+        },
+        
+        
       ],
     },
 
