@@ -5,7 +5,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 @Injectable()
 export class AppointmentService {
 
-  private readonly API_URL = 'http://localhost:8009/appointement';
+  private readonly API_URL = 'https://debrehospital.herokuapp.com/appointement';
   dataChange: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   // Temporarily stores data from dialogs
   dialogData: any;

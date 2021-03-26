@@ -3,7 +3,7 @@
   "version": "4.1.1",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve --proxy-config proxy.config.json",
     "heroku-postbuild": "ng build --prod",
     "build": "ng build",
     "test": "ng test",

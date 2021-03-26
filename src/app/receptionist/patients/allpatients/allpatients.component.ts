@@ -109,14 +109,14 @@ export class AllpatientsComponent implements OnInit {
   }
   updatepatient(rowid: any) {
     
-    const rooturl = 'http://localhost:8009/checkIn';      
+    const rooturl = 'https://debrehospital.herokuapp.com/checkIn';      
     this.httpClient.get(rooturl + '/' + rowid).subscribe(data =>{
       console.log(data);
     })
   
   }
   deleteItem(rowid: any) {
-    const rooturl = 'https://debrebirhanhospital.herokuapp.com/Patient';      
+    const rooturl = 'https://debrehospital.herokuapp.com/Patient';      
      this.httpClient.delete(rooturl + '/' + rowid).subscribe(data =>{
       this.loadData();
       this.showNotification(

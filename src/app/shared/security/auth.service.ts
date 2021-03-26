@@ -16,8 +16,8 @@ const httpOptions = {
 export class AuthService {
   isLogin = false;
   roleAs: string
-  private loginUrl = 'https://debrebirhanhospital.herokuapp.com/api/auth/signin';
-  private signupUrl = 'https://debrebirhanhospital.herokuapp.com/api/auth/signup';
+  private loginUrl = 'https://debrehospital.herokuapp.com/api/auth/signin';
+  private signupUrl = 'https://debrehospital.herokuapp.com/api/auth/signup';
  
   constructor(private http: HttpClient) {
   }

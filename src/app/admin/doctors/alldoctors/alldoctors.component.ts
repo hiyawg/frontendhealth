@@ -108,7 +108,7 @@ export class AlldoctorsComponent implements OnInit {
     });
   }
   deleteItem(rowid: any) {
-    const rooturl = 'https://debrebirhanhospital.herokuapp.com/User';      
+    const rooturl = 'https://debrehospital.herokuapp.com/User';      
     this.httpClient.delete(rooturl + '/' + rowid).subscribe(data =>{
      this.loadData();
      this.showNotification(

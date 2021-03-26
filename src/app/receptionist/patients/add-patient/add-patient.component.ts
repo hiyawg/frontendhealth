@@ -43,7 +43,7 @@ export class AddPatientComponent {
              dat.dob = dob;
     
     console.log('Form Value', this.patientForm.value);
-    this.http.post('https://debrebirhanhospital.herokuapp.com/Patient/',this.patientForm.value).subscribe(data => {
+    this.http.post('https://debrehospital.herokuapp.com/Patient/',this.patientForm.value).subscribe(data => {
       console.log(data);
       this.router.navigate(['/receptionist/patient/all-patients']);
     })

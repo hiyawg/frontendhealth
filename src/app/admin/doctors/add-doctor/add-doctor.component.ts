@@ -51,7 +51,7 @@ export class AddDoctorComponent {
     //const userData: User = {name:first,username:username,email:email,password: password,role: [role]};
     
     console.log('Form Value', doctorData);
-    this.http.post('https://debrebirhanhospital.herokuapp.com/api/auth/signup',doctorData).subscribe(data => {
+    this.http.post('https://debrehospital.herokuapp.com/api/auth/signup',doctorData).subscribe(data => {
       console.log(data);
       this.router.navigate(['/admin/doctors/allDoctors']);
     })

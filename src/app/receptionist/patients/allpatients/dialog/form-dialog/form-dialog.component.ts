@@ -73,7 +73,7 @@ export class FormDialogComponent {
     // emppty stuff
   }
   getAllDoctors(){
-    this.http.get('http://localhost:8009/User/role',this.patientForm.value).subscribe(data => {
+    this.http.get('https://debrehospital.herokuapp.com/User/role',this.patientForm.value).subscribe(data => {
       console.log(data);
       this.doctor = data;
       //this.router.navigate(['/admin/appointment/viewAppointment']);

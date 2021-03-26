@@ -38,13 +38,13 @@ export class BookappointmentComponent {
   }
   onSubmit() {
     console.log("Form Value", this.bookingForm.value);
-    this.http.post('http://localhost:8009/appointement/',this.bookingForm.value).subscribe(data => {
+    this.http.post('https://debrehospital.herokuapp.com/appointement/',this.bookingForm.value).subscribe(data => {
       console.log(data);
       this.router.navigate(['/admin/appointment/viewAppointment']);
     })
   }
   getAllDoctors(){
-    this.http.get('http://localhost:8009/User/role',this.bookingForm.value).subscribe(data => {
+    this.http.get('https://debrehospital.herokuapp.com/User/role',this.bookingForm.value).subscribe(data => {
       console.log(data);
       this.doctor = data;
       //this.router.navigate(['/admin/appointment/viewAppointment']);
